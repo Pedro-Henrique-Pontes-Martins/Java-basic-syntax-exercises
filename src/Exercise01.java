@@ -1,3 +1,4 @@
+import java.time.OffsetDateTime;
 import java.util.Scanner;
 
 public class Exercise01 {
@@ -9,8 +10,11 @@ public class Exercise01 {
         System.out.println("Write down your name:");
         var name = scanner.next();
 
-        System.out.println("Write down your age:");
-        var age =  scanner.nextInt();
+        System.out.println("Write down your year of birth:");
+        var yearBirth =  scanner.nextInt();
+
+        int currentYear = OffsetDateTime.now().getYear();
+        int age = currentYear - yearBirth;
 
         System.out.printf("Hello, %s, you are %s years old.", name, age);
     }
